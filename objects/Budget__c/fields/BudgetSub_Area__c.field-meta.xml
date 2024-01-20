@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BudgetSub_Area__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <externalId>false</externalId>
+    <label>Sub Area</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Sub_Area__c.Area__c</field>
+            <operation>equals</operation>
+            <valueField>$Source.BudgetArea__c</valueField>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Sub_Area__c</referenceTo>
+    <relationshipLabel>Budgets</relationshipLabel>
+    <relationshipName>Budgets</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

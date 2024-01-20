@@ -1,0 +1,29 @@
+<template>
+    <b>LWC Iterators</b> <p></p>
+
+    <p>******************** Way 1 **********************</p>
+
+            <template for:each={cities} for:item=c>
+                <p key={c}>
+                    Good Morning {c}
+                </p>
+            </template>
+
+
+    <p>******************* Way 2 ************************</p>
+
+            <template iterator:it={cities}>
+                <p key={it.value}>
+                    Good Morning {it.value}
+                </p>
+            </template><p></p>
+
+    <b>*************************Displaying Json in LWC**************************</b> <p></p>
+    <b>Student name is </b> {student.name} <p></p>
+    <b>Student Place </b> {student.place} <p></p>
+    <b>Student age  </b> {student.age} <p></p>
+    <b>Student phone  </b> {student.phone} <p></p>
+   
+
+    
+</template>

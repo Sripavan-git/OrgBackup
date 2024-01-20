@@ -1,0 +1,22 @@
+<apex:page >
+    
+    <apex:form >
+        <apex:pageBlock title="WorkBench Deployment">
+            <apex:pageBlockSection title="Sample VF Page">
+                <b>This is a page created in the Mys Development org</b>
+                <apex:commandButton value="Submit" onclick="callme()"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    
+    <script>
+    function callme()
+    {
+        alert('This is WorkBench Deployment');
+    }
+        
+    	
+    </script>
+    
+</apex:page>

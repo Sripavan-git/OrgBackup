@@ -1,0 +1,19 @@
+<template>
+    
+    <template lwc:if={flag}>
+        <div id="True">
+            <div>Name : {Name}</div>
+            <div>Description : {description}</div>
+
+            <lightning-badge label={material}></lightning-badge>
+            <lightning-badge label={category}></lightning-badge>
+        </div>
+    </template>
+
+    <template lwc:else>
+
+        <div>Loading......</div>
+                
+    </template>
+
+</template>

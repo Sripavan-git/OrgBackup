@@ -1,0 +1,60 @@
+<apex:page >
+    <apex:form >
+        <apex:pageBlock title="Lightning Message Service">
+        <apex:pageBlockSection title="VisualForce --> LMS --> TO SEND MESSAGE">
+            <b>Enter the Message</b><input type="text" id="inp1"/><p></p>
+            <button onclick="publishMC()">PUBLISH MESSAGE</button>
+            <button onclick="subscribeMC()">START</button>
+            <button onclick="unsubscribeMC()">STOP</button>
+        </apex:pageBlockSection>
+
+        <apex:pageBlockSection title="VisualForce --> LMS --> Receive Message">
+
+            <b>MESSAGE RECEIVED</b> <label id="mcmsg"></label>
+
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+
+    <script>
+        // STEP 1:- Load the Message Channel
+        var mymsgchannel = "{!$MessageChannel.MyMsgChannel__c}"
+        var subscribeToMC;
+        function publishMC()
+        {
+            // STEP 1: get the Data and pass to Message Channel
+            const msg = {
+                messsageToSend : document.getElementById("inp1").value,
+                sourceSystem : 'VISUALFORCE',
+                SenderName : {!$User.FirstName},
+                SenderEmail : {!$User.Email}
+            }
+
+            sforce.one.publish(mymsgchannel,msg);
+            
+        }
+        function subscribeMC()
+        {
+            if(!subscribeToMC)
+            {
+                subscribeToMC = sforce.one.subscribe(mymsgchannel,displayMessage);
+            }
+        }
+        displayMessage(message)
+        {
+            var txtlbl = document.querySelector('#mcmsg');
+            txtlbl.innerHTML = json.stringify(message);
+        }
+        function unsubscribeMC()
+        {
+            if(subscribeToMC)
+            {
+                subscribeToMC = sforce.one.unsubscribe(subscribeToMC);
+                subscribeToMC = null;
+            }
+
+        }
+
+    </script>
+     
+</apex:page>

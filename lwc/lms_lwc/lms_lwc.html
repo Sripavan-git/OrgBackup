@@ -1,0 +1,17 @@
+<template>
+    
+
+    <lightning-card title="Lightning Messaging Service --> LWC --> To send Message">
+
+        <lightning-input label="Enter the message" onchange={capinput}></lightning-input>
+        <lightning-button label="Publish Message" onclick={publishmc}></lightning-button>
+        <lightning-button label="Start" onclick={subscribemc}></lightning-button>
+        <lightning-button label="Stop" onclick={unsubscribemc}></lightning-button>
+    </lightning-card>
+    <lightning-card title="Lightning Messaging Service --> LWC --> To Receive Message">
+
+        <lightning-formatted-text value={receivedmsg} ></lightning-formatted-text>
+
+    </lightning-card>
+
+</template>

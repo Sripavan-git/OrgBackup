@@ -1,0 +1,17 @@
+<template>
+
+    <lightning-card title="LWC Imperation Example">
+        <lightning-input 
+            label="Enter Search Text"
+            onchange={getSearchText}
+        ></lightning-input>
+        <lightning-datatable
+            key-field="Id"
+            data={accounts.data}
+            columns={accountcol}
+            onsave={saveData}
+            draft-values={draftValues}
+        ></lightning-datatable>
+    </lightning-card>
+    
+</template>

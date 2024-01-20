@@ -1,0 +1,77 @@
+<aura:component controller="BudgetListHandler" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+
+    
+    <aura:attribute name="budget" type="Budget__c[]"/>
+    <aura:attribute name="budgetcols" type="List[]"/>
+    <aura:attribute name="showStatusSearch" type="Boolean" default="false"/>
+    <aura:attribute name="showPcklst1" type="Boolean" default="false"/> 
+    <aura:attribute name="showAmountList" type="Boolean" default="false"/> 
+    <aura:attribute name="showAmountInput" type="Boolean" default="false"/>
+    <aura:attribute name="showAmountInput2" type="Boolean" default="false"/>
+    <aura:attribute name="AreaRecords" type="List[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.initfunc}"/>
+    
+    
+    
+    <lightning:card iconName="standard:account"> 
+        
+        <aura:set attribute="title">
+                Budgets<p></p>
+                <lightning:select name="dropdown" label="Select an Option" aura:id="budgetlist" onchange="{!c.handleChange}">
+                    <option value="All Budgets">All Budgets</option>
+                    <option value="Upcoming Budgets">Upcoming Budgets</option>
+                    <option value="Status">Status</option>
+                    <option value="Area">Area</option>
+                    <option value="User">User</option>
+                    <option value="Amount">Amount</option>
+                    <option value="Closed">Closed</option>
+    			</lightning:select>
+            	{!v.body}
+         </aura:set>
+        
+        <aura:if isTrue = "{!v.showPcklst1}">
+            <lightning:select name="AreaPickList" aura:id="arealist" label="Select" onchange="{!c.OnAreaSelect}">
+                <aura:iteration items="{!v.AreaRecords}" var="area">
+                    <option text="{!area}" value="{!area}"/>
+                </aura:iteration>
+            </lightning:select>
+        </aura:if>
+        
+        <aura:if isTrue = "{!v.showAmountList}">
+            <lightning:select name="AmountPickList" aura:id="amountlist" label="Select" onchange="{!c.OnAmountSelect}">
+                <option value="">--Select--</option>
+                <option value="Equal to">Equal to</option>
+                <option value="Greater Than">Greater Than</option>
+                <option value="Smaller Than">Smaller Than</option>
+                <option value="Between">Between</option>
+            </lightning:select>
+        </aura:if>
+        
+        <aura:if isTrue="{!v.showStatusSearch}">
+            <lightning:input aura:id="inp" onchange="{!c.statusinput}"/>
+        </aura:if>
+        
+        
+            <lightning:layout>
+                <lightning:layoutItem size="6">
+                    <aura:if isTrue="{!v.showAmountInput}">
+                        <lightning:input aura:id="amountinp" onchange="{!c.OnAmountInputSelect}" />
+                    </aura:if>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="6">
+                    <aura:if isTrue="{!v.showAmountInput2}">
+                        <lightning:input aura:id="amountinp2" onchange="{!c.OnAmountInputSelect}" />
+                    </aura:if>
+                </lightning:layoutItem>
+            </lightning:layout>
+        
+        
+        
+        
+        <lightning:dataTable keyField="Id" data="{!v.budget}" columns="{!v.budgetcols}"/>
+        
+        
+       
+        
+    </lightning:card>
+</aura:component>

@@ -1,0 +1,29 @@
+.mainTile{
+
+    background-color: grey;
+    display: block;
+    cursor: pointer;
+
+}
+
+.innerTile{
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+}
+
+.textOnTile{
+    
+    margin: 5px;
+    padding: 5px;
+    color: white;
+}
+
+.selected{
+    border: 5px solid whitesmoke;
+}

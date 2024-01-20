@@ -1,0 +1,27 @@
+<aura:component controller="TaskTrackHandler" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="task" type="TaskTrack__c" default="{'sObjectType':'Account'}"/>
+    
+    <lightning:card title="Task Tracker" iconName="standard:account">
+                
+        <aura:set attribute="title">
+            <b>Task Tracker</b><p></p>
+        </aura:set>
+        
+        <aura:set attribute="actions">
+            <lightning:button label="Save" variant="success" iconName="custom:custom12" onclick="{!c.save}"/>
+            <lightning:button label="Cancel" variant="brand" iconName="custom:custom14" onclick="{!c.clear}"/>
+        </aura:set>
+        
+        <lightning:input label="Enter Task Name" value="{!v.task.Name}"/>
+        <lightning:input label="Enter Task Date" type="date" value="{!v.task.Due_Date__c}"/>
+        <lightning:select name="industry" label="Enter Task Status" value="{!v.task.Status__c}">
+                    	<option value="">-- Select --</option>
+                        <option value="New">New</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+    			</lightning:select>
+        <lightning:input label="Enter Task Description" value="{!v.task.Description__c}"/>
+    </lightning:card>
+    
+</aura:component>

@@ -1,0 +1,35 @@
+<template>
+    
+    <lightning-card title="Expense Tracker">
+        <p class="slds-p-around_medium">
+            <lightning-input label="Enter Date" type="Date" name="datefield" onchange={handleChange}></lightning-input>
+            <lightning-input label="Enter Description" type="text" name="descfield" onchange={handleChange}></lightning-input>
+            <lightning-input label="Enter Amount" type="text" name="amountfield" onchange={handleChange}></lightning-input>
+            <lightning-input label="Enter Category" type="text" name="catfield" onchange={handleChange}></lightning-input>
+
+            <lightning-button label="Submit" variant="success" onclick={submit}></lightning-button>
+        </p>
+    </lightning-card>
+
+    <lightning-card title="Expense Entries">
+
+        <template if:true={showdata}>
+            <template for:each={expensedata} for:item="expense">
+                <div class="slds-box" key={expense.id}>
+                    <ul class="slds-has-dividers_around-space">
+                        <li class="slds-item">Expense Number : {expense.id}</li>
+                        <li class="slds-item">Date Entered : {expense.date}</li>
+                        <li class="slds-item">Description Entered : {expense.desc}</li>
+                        <li class="slds-item">Amount Entered : {expense.amt}</li>
+                        <li class="slds-item">Category Entered : {expense.cat}</li>
+                    </ul>
+                </div>
+            </template>
+        </template>
+
+    </lightning-card>
+
+
+
+
+</template>

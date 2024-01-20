@@ -1,0 +1,13 @@
+<apex:page Controller="VFController" renderAs="pdf">
+    <html>
+        <head>
+            <style>
+            </style>
+        </head>
+        <body style="font-family: 'Arial', sans-serif;margin: 20px;">
+            <h1 style="color: #333;text-align: center;">PDF Generated Successfully</h1>
+            <p style="color: #555;line-height: 1.6;">Hello,</p>
+            <p style="color: #555;line-height: 1.6;">We have successfully generated the PDF and attached it to the Account <span style="font-weight: bold;color: #e44d26;">{!accountName}</span></p>
+        </body>
+    </html>
+</apex:page>

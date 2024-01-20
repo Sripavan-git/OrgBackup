@@ -1,0 +1,32 @@
+<template>
+
+    <template if:true={loadComponent}>
+
+        <div class="slds-var-p-around_small main">
+            <div class="slds-grid slds-gutters ">
+                <div class="slds-col slds-var-m_around_small movie-poster">
+                     <img src={movieDetail.Poster} alt="Movie Poster Loading">
+                </div>
+                <div class="slds-col">
+                    <h1 class="movie-title slds-var-m-around_small">
+                        {movieDetail.Title}
+                    </h1>
+                    <div class="slds-var-m-around_small moviedetails">
+                        <p><b>Year  : </b>{movieDetail.Year}</p>
+                        <p><b>Rating  : </b>{movieDetail.Rated}</p>
+                        <p><b>Genre  : </b>{movieDetail.Genre}</p>
+                        <p><b>Released  : </b>{movieDetail.Released}</p>
+                        <p><b>Director  : </b>{movieDetail.Director}</p>
+                        <p><b>Writer</b>{movieDetail.Writer}</p>
+                        <p><b>Actors  : </b>{movieDetail.Actors}</p>
+                        <p class="plot"><b>Plot  : </b>{movieDetail.Plot}</p>
+                        <p><b>Language : </b>{movieDetail.Language}</p>
+                        <p><b>Awards : </b>{movieDetail.Awards}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </template>
+    
+</template>

@@ -1,0 +1,42 @@
+<template>
+
+    <lightning-card title="TODO List">
+        <lightning-button-icon slot="actions" icon-name="Utility:sync" alternative-text="Sync" title="sync"></lightning-button-icon>
+
+        <lightning-layout >
+            <lightning-layout-item padding="around-small" size="12">
+                <ul class="slds-has-dividers_around-space">
+
+                    <template for:each={taskList} for:item="EashtaskList">
+                        <li key={EashtaskList.id} class="slds-item" >
+                            <lightning-layout vertical-align="center" horizontal-align="spread">
+                                <lightning-layout-item padding="around-medium">
+                                        {EashtaskList.name}
+                                </lightning-layout-item>
+                                <lightning-layout-item padding="around-medium">
+                                    <lightning-button-icon icon-name="Utility:delete" alternative-text="Delete" title="Delete" name={EashtaskList.id} onclick={removeTask}></lightning-button-icon>
+                            </lightning-layout-item>
+                            </lightning-layout>
+
+                        </li>
+                    </template>
+
+                </ul>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <p slot="footer">
+            <lightning-layout pull-to-boundary="small" vertical-align="center">
+                <lightning-layout-item padding="around-small" flexibility="grow">
+                    <lightning-input placeholder="Enter Task Name" variant="label-hidden" label="New Task" type="text" value={taskName} onchange={addTask}></lightning-input>
+                </lightning-layout-item >
+                <lightning-layout-item padding="horizantal-small" style="text-align: left;">
+                    <lightning-button label="Add" variant="brand" onclick={addTaskItem}></lightning-button>
+
+                </lightning-layout-item>
+            </lightning-layout>
+        </p>
+
+    </lightning-card>
+    
+</template>

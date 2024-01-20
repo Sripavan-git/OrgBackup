@@ -1,0 +1,38 @@
+<apex:page id="pg">
+    <apex:form id="frm">
+        <apex:pageBlock title="Calculator" id="pb1">
+            <apex:pageBlockSection title="Greater of Three Numbers" id="pbs1" columns="1">
+                <apex:inputText label="Enter First Number" id="inp1"/>
+                <apex:inputText label="Enter First Number" id="inp2"/>
+                <apex:inputText label="Enter First Number" id="inp3"/>
+                
+                <apex:commandButton value="Submit" onclick="calculate()" id="btn1"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <script>
+    function calculate()
+    {
+        
+        var num1 = parseInt(document.getElementById("pg:frm:pb1:pbs1:inp1").value);
+        var num2 = parseInt(document.getElementById("pg:frm:pb1:pbs1:inp2").value);
+        var num3 = parseInt(document.getElementById("pg:frm:pb1:pbs1:inp3").value);
+        
+        if(num1 > num2 && num1 > num3)
+            {
+            	alert('The greater number is '+num1);
+            }
+        else if(num2 > num1 && num2 > num3)
+            {
+                alert('The greater number is '+num2);
+            }
+        else
+            {
+                alert('The Greater number is '+num3);
+                
+            }
+    }
+    
+    </script>
+</apex:page>

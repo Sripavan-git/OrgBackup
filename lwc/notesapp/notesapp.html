@@ -1,0 +1,60 @@
+<template>
+    <div class="background slds-p-around_small">
+    <lightning-layout multiple-rows="true">
+        <lightning-layout-item padding="around-small" size="2">
+            <div class="background slds-p-around_small">
+
+                <div class="addTask slds-p-around_small">
+                    <div class="circleborder"> 
+                        <span style="margin: 10px;">
+                            <lightning-icon icon-name="utility:add" size="large" onclick={addTask}></lightning-icon>  
+                        </span>
+                    </div>
+                    <!-- <p class="note">Add a New Note </p> -->
+                </div>
+                
+            </div>
+        </lightning-layout-item>
+
+        <template for:each={tasksList} for:item="eachTask">
+            <lightning-layout-item key={eachTask.id} padding="around-small">
+                <div style="padding-top: 10px;">
+                    <div class="tasklist slds-p-around_small">
+                        <h3 style="background-color: skyblue;">{eachTask.TaskName}</h3><p></p>
+                        <div style="text-align: left;">
+                            {eachTask.TaskDetail}
+                        </div>
+                    </div>
+                </div>
+
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+
+
+    <template if:true={addTaskCmp}>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Add a Note</h1>
+            </div>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+                <lightning-card>
+                    <lightning-input label="Title" type="text" onchange={ChangeHandler} name="taskName"></lightning-input>
+                    <lightning-input-rich-text
+                        onchange={ChangeHandler}
+                        name="taskDetail">
+                    </lightning-input-rich-text>
+                </lightning-card>
+            
+            </div>
+            <div class="slds-modal__footer">
+                <button class="slds-button slds-button_neutral" aria-label="Cancel and close" onclick={closeAddtask}>Cancel</button>
+                <lightning-button variant="brand" label="Save" disabled={isSaveDisabled} onclick={saveTask}></lightning-button>
+            </div>
+        </div>
+    </section>
+</template>
+</div>
+</template>

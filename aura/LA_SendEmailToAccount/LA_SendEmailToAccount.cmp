@@ -1,0 +1,30 @@
+<aura:component >
+    
+    <aura:attribute name="cons" type="Contact"  default="{'sObjectType':Contact}" />
+    <lightning:card iconName="standard:account">
+        
+        <aura:set attribute="actions">
+            
+            <lightning:button label="Save" variant="success" iconName="custom:custom13" onclick="{!c.submit}"/>
+            <lightning:button label="Clear" variant="brand" iconName="custom:custom15" onclick="{!c.clear}"/>
+        </aura:set>
+        
+        <aura:set attribute="title">
+            
+            <b>Create Contact</b><p></p>
+            Enter the following details
+            
+        </aura:set>
+        
+        
+        	<lightning:input label="Enter First Name" value="{!v.cons.FirstName}"/>
+            <lightning:input label="Enter Last Name" value="{!v.cons.LastName}"/>
+            <lightning:input label="Enter Phone" value="{!v.cons.Phone}"/>
+            <lightning:input label="Enter Email" value="{!v.cons.Email}"/>
+            <lightning:input label="Enter Description" value="{!v.cons.Description}"/>
+        
+        
+        
+    </lightning:card>
+	
+</aura:component>

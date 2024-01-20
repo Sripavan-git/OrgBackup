@@ -1,0 +1,27 @@
+<template>
+
+    <lightning-card title="Search Key Example With Wire" icon-name="custom:custom19">
+        
+        <lightning-input label="Enter Search Text" type="Search" onchange={captureInput}></lightning-input>
+        <lightning-button label="Search" onclick={Search} variant="success"></lightning-button>
+        
+        <p style="font-size: 15px;;">Displaying data in the Accounts with SearchKey</p>
+        
+        <p style="font-size: 15px;">********************* Wire a Property *****************************************</p>
+        <template if:true={accounts.data}>
+            <lightning-datatable key-field="Id" data={accounts.data} columns={accountcols}></lightning-datatable>
+        </template>
+
+        <p style="font-size: 15px;">********************* Wire a Funtion *****************************************</p>
+        <template if:true={mydata}>
+            <lightning-datatable key-field="Id" data={mydata} columns={accountcols}></lightning-datatable>
+        </template>
+        <template if:true={myerror}>
+            {myerror}
+        </template>
+
+
+
+    </lightning-card>
+    
+</template>

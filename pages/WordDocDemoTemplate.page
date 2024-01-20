@@ -1,0 +1,29 @@
+<apex:page Controller="VFController" showHeader="false" applyBodyTag="false" contentType="application/msword"  sidebar="false" applyHtmlTag="false"   standardStylesheets="false"  >
+    <html>
+        <head>
+            <style>
+                body {
+                font-family: 'Arial', sans-serif;
+                margin: 20px;
+                }
+                h1 {
+                color: #333;
+                text-align: center;
+                }
+                p {
+                color: #555;
+                line-height: 1.6;
+                }
+                .important-text {
+                font-weight: bold;
+                color: #e44d26;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Document Generated Successfully</h1>
+            <p>Hello,</p>
+            <p>We have successfully generated the Word Documemt and attached it to the Account <span class="important-text">{!accountName}</span></p>
+        </body>
+    </html>
+</apex:page>

@@ -1,0 +1,120 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+
+    <lightning:card>
+        
+    <lightning:recordEditForm recordId="" objectApiName="Contact">
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+        <h2 class="slds-text-heading_medium slds-m-bottom_medium">Contact Information</h2>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="Name" />
+                        </div>
+                    </div>
+                    <!-- Add more form elements for fields in the first column -->
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="AccountId" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="Title" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="Department" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="Birthdate" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="Department" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="ReportsToId" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="LeadSource" />
+                        </div>
+                    </div>
+                    
+                </div>
+                
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="Phone" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="HomePhone" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="MobilePhone" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="OtherPhone" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="Fax" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="Email" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="AssistantName" />
+                        </div>
+                    </div>
+                    
+                    <div class="slds-form-element">
+                        <div class="slds-form-element__control">
+                            <lightning:inputField fieldName="AssistantPhone" />
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="slds-text-align_center">
+            <lightning:button label="Save" variant="brand"/>
+            <lightning:button label="Cancel" variant="neutral"/>
+        </div>
+	</lightning:recordEditForm>
+
+    </lightning:card>
+
+    
+</aura:component>

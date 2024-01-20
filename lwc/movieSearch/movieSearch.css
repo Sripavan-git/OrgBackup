@@ -1,0 +1,13 @@
+.body{
+    padding: 10px;
+}
+
+.mainDiv{
+
+    background-color: white;
+}
+
+.customStyle{
+    background-color: black;
+    height: 500px;
+}

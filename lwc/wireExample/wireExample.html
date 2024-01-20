@@ -1,0 +1,11 @@
+<template>
+
+    <template for:each={accountData.data} for:item='acc'>
+        <p key={acc.Id}>
+
+            {acc.Id} ------ {acc.Name} -------- {acc.Phone} --- {acc.Industry} ---- {acc.Rating}
+
+        </p>
+    </template>
+    
+</template>
